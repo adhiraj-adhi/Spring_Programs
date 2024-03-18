@@ -1,0 +1,15 @@
+package com.adhi.resources;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import com.adhi.services.BankingApp;
+
+@Configuration
+public class SpringConfigFile {
+	// Creating bean for BankingApp
+	@Bean
+	public BankingApp bankingApp() {
+		return new BankingApp();
+	}
+}

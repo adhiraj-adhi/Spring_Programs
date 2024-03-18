@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Creating object of ResourceBundleMessageSource class -->
+	<bean class="org.springframework.context.support.ResourceBundleMessageSource" id="resBun">
+		<!-- This class has a private property named basename and an inherited 
+		setter method for this property. -->
+		<property name="basename" value="com/adhiraj/resources/MessageBundle" />
+	</bean>
+
+    <bean class="com.adhiraj.beans.Student" id="stdObj">
+    	<property name="messageSource" ref="resBun" />
+    </bean>
+
+</beans>

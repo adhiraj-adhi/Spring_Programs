@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+        "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+
+	<!-- Creating object of target class: -->
+	<bean class="com.adhi.services.BankingApp" id="targetClass" />
+	
+	<!-- Creating object of Aspects class: -->
+	<bean class="com.adhi.aspects.LoggingAspect" id="logAspect" />
+	
+	<!-- Configuring target to run the particular advide: -->
+	<bean class="org.springframework.aop.framework.ProxyFactory" id="proxyId">
+		<property name="target" value="" />
+		
+	</bean>
+</beans>

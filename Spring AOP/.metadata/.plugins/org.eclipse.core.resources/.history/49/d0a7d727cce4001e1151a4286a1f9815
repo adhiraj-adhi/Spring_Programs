@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+						http://www.springframework.org/schema/beans/spring-beans.xsd
+        				http://www.springframework.org/schema/aop 
+        				http://www.springframework.org/schema/aop/spring-aop.xsd"> 
+       
+    <!-- bean definitions for the BankingApp -->
+    <bean class="com.adhi.services.BankingApp" id="bankingAppId" />
+    <bean class="com.adhi.services.BankingApp2" id="bankingAppId2" />
+    
+    <!-- Bean definitions for aspects: -->
+    <bean class="com.adhi.aspects.LoggingAspect" id="logAspectId" />
+    <bean class="com.adhi.aspects.SecurityAspect" id="secAspectId" />
+    
+    <!-- AOP Configurations for BankingApp.java -->
+    <aop:config>
+    	<aop:aspect ref="logAspectId">
+    		<aop:pointcut expression="execution(* com.adhi.services.BankingApp.*(..))" id="pointCutId" />
+    		<aop:before method="logger" pointcut-ref="pointCutId" />
+    		<aop:after method="logger" pointcut-ref="pointCutId" />
+    	</aop:aspect>
+    	
+    	<!-- ============================================================== -->
+    	
+    	<!-- Provide aspect for security -->
+    	<aop:aspect ref="secAspectId">
+    		<aop:pointcut expression="execution(* com.adhi.services.BankingApp.transactionUsingUPI())" 
+    			id="pointCutId1" />
+    		<aop:before method="securityAspect" pointcut-ref="pointCutId1" />
+    		
+    		<aop:pointcut expression="execution(* com.adhi.services.BankingApp.transactionUsingInternetBanking())" 
+    			id="pointCutId2" />
+    		<aop:before method="securityAspect" pointcut-ref="pointCutId2" />
+    	</aop:aspect>
+    </aop:config>
+    
+    <!-- AOP Configurations for BankingApp2.java -->
+    <aop:config>
+    	<aop:aspect ref="logAspectId">
+    		<aop:pointcut expression="execution(* com.adhi.services.BankingApp2.*(..))" id="pointCutId" />
+    		<aop:after method="logger" pointcut-ref="pointCutId" />
+    	</aop:aspect>
+    	
+    	<!-- ============================================================== -->
+    	
+    	<!-- Provide aspect for security -->
+    	<aop:aspect ref="secAspectId">
+    		<aop:pointcut expression="execution(* com.adhi.services.BankingApp.transactionUsingUPI())" 
+    			id="pointCutId1" />
+    		<aop:before method="securityAspect" pointcut-ref="pointCutId1" />
+    	</aop:aspect>
+    </aop:config>
+    
+    
+
+</beans>

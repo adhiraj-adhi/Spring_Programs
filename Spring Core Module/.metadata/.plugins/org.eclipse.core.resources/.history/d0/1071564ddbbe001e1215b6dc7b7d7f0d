@@ -1,0 +1,11 @@
+package com.adhiraj.logging;
+
+import java.util.logging.Logger;
+
+public class Test1 {
+	public static void main(String[] args) {
+		
+		// We can get Logger object using getLogger() factory method.
+		Logger logger = Logger.getLogger(null);
+	}
+}

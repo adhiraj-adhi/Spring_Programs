@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+						http://www.springframework.org/schema/beans/spring-beans.xsd
+        				http://www.springframework.org/schema/aop 
+        				http://www.springframework.org/schema/aop/spring-aop.xsd"> 
+       
+    <!-- bean definitions for the BankingApp -->
+    <bean class="com.adhi.services.BankingApp" id="bankingAppId" />
+    
+    <!-- Bean definitions for aspects: -->
+    <bean class="com.adhi.aspects.LoggingAspect" id="logAspectId" />
+    <bean class="com.adhi.aspects.SecurityAspect" id="secAspectId" />
+    
+    <!-- AOP Configurations -->
+    <aop:config>
+    	<!-- Provide aspect for logging -->
+    	<aop:aspect ref="logAspectId">
+    		<!-- Declaring the pointcut -->
+    		<aop:pointcut expression="execution(* com.adhi.services.BankingApp.*(..))" id="pointCutId" />
+    		<!-- Declaring type of advice, method name (which here is logger()) and,
+    		 pointcut-ref (i.e. pointcut where method is to be executed) -->
+    		<aop:before method="logger" pointcut-ref="pointCutId" />
+    	</aop:aspect>
+    </aop:config>
+
+</beans>

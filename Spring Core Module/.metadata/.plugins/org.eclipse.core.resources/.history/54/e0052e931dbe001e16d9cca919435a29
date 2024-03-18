@@ -1,0 +1,37 @@
+package com.adhiraj.main;
+
+import java.util.Locale;
+
+public class Main4 {
+	public static void main(String[] args) {
+//		Locale myLocale = Locale.JAPANESE; // using static language variable
+		/*
+		 * Fun Fact: We do not have static variables for India or Indian languages in Locale
+		 * as India is diverse.
+		 * */
+		
+		/* If we want to print country name in Hindi then we can do: 
+		   Locale myLocale = new Locale("hi");
+		 */
+		Locale myLocale = new Locale("hi");
+		String[] countryCode_arr = Locale.getISOCountries();
+		
+		for(String countryCode : countryCode_arr) {
+			Locale locale = new Locale("",countryCode); 
+			System.out.println(""
+					+ "Country code is: "+countryCode+
+					" , Country name in English is: "+locale.getDisplayCountry()
+					+" and in Japanese is: "+locale.getDisplayCountry(myLocale));
+		}
+	}
+}
+
+/*
+O/P:
+Country code is: AD , Country name in English is: Andorra and in Japanese is: アンドラ
+Country code is: AE , Country name in English is: United Arab Emirates and in Japanese is: アラブ首長国連邦
+Country code is: AF , Country name in English is: Afghanistan and in Japanese is: アフガニスタン
+Country code is: AG , Country name in English is: Antigua & Barbuda and in Japanese is: アンティグア・バーブーダ
+Country code is: AI , Country name in English is: Anguilla and in Japanese is: アンギラ
+Country code is: AL , Country name in English is: Albania and in Japanese is: アルバニア
+*/

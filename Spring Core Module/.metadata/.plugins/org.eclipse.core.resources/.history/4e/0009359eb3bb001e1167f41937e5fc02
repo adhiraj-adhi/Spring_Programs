@@ -1,0 +1,16 @@
+package com.adhiraj.main;
+
+import java.util.Locale;
+import java.util.ResourceBundle;
+
+public class Main1 {
+	public static void main(String[] args) {
+		Locale locale1 = new Locale("en","US");
+		Locale locale2 = new Locale("hi","IN");
+		
+		ResourceBundle resourcebundle = ResourceBundle.getBundle("com/adhiraj/resources/MessageBundle",locale);
+		
+		String message2 = resourcebundle.getString("key_greet");
+		System.out.println(message2);
+	}
+}

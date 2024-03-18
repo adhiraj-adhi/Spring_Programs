@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="com.adhi.main.Main"/>
+    <fullyQualifiedTypeName name="org.springframework.aop.BeforeAdvice"/>
+    <fullyQualifiedTypeName name="org.springframework.aop.MethodBeforeAdvice"/>
+    <fullyQualifiedTypeName name="org.springframework.aop.framework.ProxyFactory"/>
+    <fullyQualifiedTypeName name="org.springframework.aop.framework.ProxyFactoryBean"/>
+    <fullyQualifiedTypeName name="org.springframework.aop.support.NameMatchMethodPointcut"/>
+    <fullyQualifiedTypeName name="org.springframework.aop.support.DefaultPointcutAdvisor"/>
+    <fullyQualifiedTypeName name="org.springframework.context.support.ClassPathXmlApplicationContext"/>
+    <fullyQualifiedTypeName name="org.springframework.context.annotation.Configuration"/>
+    <fullyQualifiedTypeName name="org.springframework.context.annotation.Bean"/>
+    <fullyQualifiedTypeName name="com.adhi.aspects.LoggingAspect"/>
+    <fullyQualifiedTypeName name="org.springframework.context.ApplicationContext"/>
+    <fullyQualifiedTypeName name="org.springframework.context.annotation.AnnotationConfigApplicationContext"/>
+    <fullyQualifiedTypeName name="com.adhi.resources.SpringConfigFile"/>
+    <fullyQualifiedTypeName name="com.adhi.services.BankingApp"/>
+    <fullyQualifiedTypeName name="org.springframework.context.annotation.EnableAspectJAutoProxy"/>
+    <fullyQualifiedTypeName name="org.aspectj.lang.annotation.After"/>
+    <fullyQualifiedTypeName name="org.aspectj.lang.annotation.Around"/>
+    <fullyQualifiedTypeName name="org.aspectj.lang.ProceedingJoinPoint"/>
+    <fullyQualifiedTypeName name="org.aspectj.lang.annotation.Aspect"/>
+    <fullyQualifiedTypeName name="org.aspectj.lang.annotation.Before"/>
+    <fullyQualifiedTypeName name="com.adhi.aspects.SecurityAspect"/>
+    <fullyQualifiedTypeName name="java.lang.StringIndexOutOfBoundsException"/>
+    <fullyQualifiedTypeName name="com.adhi.services.BankingApp2"/>
+</qualifiedTypeNameHistroy>

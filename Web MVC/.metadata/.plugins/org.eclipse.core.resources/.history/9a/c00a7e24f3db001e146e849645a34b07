@@ -1,0 +1,38 @@
+package com.adhi.controllers;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import com.adhi.beans.Student;
+
+@Controller
+public class MyController {
+	
+	@GetMapping("/register")
+	public String openRegisterPage(Model model) {
+		model.addAttribute("studentModel", new Student());
+		return "register";
+	}
+	
+	@PostMapping("/register")
+	public String registerFormHandler(Student std, Model model) {
+		
+		// After getting all the fields we will insert it into database
+		boolean isInsertionSuccessful = true;
+		if(isInsertionSuccessful) {
+			Student student = new Student();
+			student.setName(name);
+			student.setEmail(email);
+			student.setGender(gender);
+			student.setCity(city);
+			
+			model.addAttribute("studentDetails", student);
+		}
+		
+		
+		System.out.println(name+"..."+email+"..."+password+"..."+gender+"..."+city);
+		return "profile";
+	}
+}

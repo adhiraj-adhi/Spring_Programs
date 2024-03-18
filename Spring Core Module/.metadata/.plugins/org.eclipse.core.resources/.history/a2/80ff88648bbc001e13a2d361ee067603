@@ -1,0 +1,25 @@
+package com.adhiraj.resources;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import com.adhiraj.beans.Address;
+
+@Configuration
+public class SpringConfigFile {
+	/*
+	 Alternative of:
+	 <bean class="com.adhiraj.beans.Address" id="addrObj1">
+    	<property name="houseNo" value="123" />
+    	<property name="city" value="Delhi" />
+    	<property name="pinCode" value="54321" />
+    </bean>
+	 */
+	
+	@Bean
+	public Address addrObj1() {
+		Address addr = new Address();
+		
+		return addr;
+	}
+}

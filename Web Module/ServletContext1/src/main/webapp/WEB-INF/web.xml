@@ -1,0 +1,6 @@
+<web-app>
+	<context-param>
+		<param-name> myName </param-name>
+		<param-value> Adhiraj </param-value>
+	</context-param>
+</web-app>

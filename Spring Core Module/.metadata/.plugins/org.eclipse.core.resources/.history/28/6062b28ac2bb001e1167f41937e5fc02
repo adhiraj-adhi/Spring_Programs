@@ -1,0 +1,11 @@
+package com.adhiraj.beans;
+
+import org.springframework.context.MessageSource;
+
+public class Student {
+	private MessageSource messageSource;
+	
+	public void display() {
+		System.out.println("Hello, how are you?");
+	}
+}

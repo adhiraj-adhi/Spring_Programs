@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:c="http://www.springframework.org/schema/c"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!--
+	<bean class="com.adhiraj.beans.Address" id="addrObj1">
+		<constructor-arg value="123" />
+		<constructor-arg value="Delhi" />
+		<constructor-arg value="12345" />
+	</bean>
+	
+	<bean class="com.adhiraj.beans.Student" id="stdObj1">
+		<constructor-arg value="Adhiraj" />
+		<constructor-arg value="11" />
+		<constructor-arg value="95.7" />
+		<constructor-arg ref="addrObj1" />
+	</bean>
+    
+    
+    The alternative of above line is: 
+    
+    -->
+    
+    
+    <bean class="com.adhiraj.beans.Address" id="addrObj1"
+    	c:houseNo="123"
+    	c:city="Delhi"
+    	c:pinCode="12345"
+    />
+    
+    <bean class="com.adhiraj.beans.Student" id="stdObj1"
+    	c:name="Adhiraj"
+    	c:roll="101" 
+    	c:marks="94.4"
+    	c:address-ref="addrObj1"
+    />
+    
+</beans>
+
+<!-- The following line:[xmlns:c="http://www.springframework.org/schema/c"] in above beans
+tag is nothing but c-namespace declaration in the spring configuration file -->

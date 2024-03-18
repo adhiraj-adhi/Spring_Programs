@@ -1,0 +1,20 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  
+  <!-- Mapping Dispatcher Servlet: -->
+  <servlet>
+  	<servlet-name>myDispatcherServlet</servlet-name>
+  	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>myDispatcherServlet</servlet-name>
+  	<url-pattern>/</url-pattern>
+  	<!-- We provide URL Pattern as "/" so that each and every request goes
+  	through the Servlet which is configured at this URL (which will be
+  	DispatcherServlet i.e. Front Controller) -->
+  </servlet-mapping>
+</web-app>

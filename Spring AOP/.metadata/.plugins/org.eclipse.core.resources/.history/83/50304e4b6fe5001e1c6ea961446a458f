@@ -1,0 +1,10 @@
+package com.adhi.aspects;
+
+import org.aspectj.lang.annotation.Aspect;
+
+@Aspect
+public class SecurityAspect {
+	public void securityAspect() {
+		System.out.println("--- Security Service ---");
+	}
+}

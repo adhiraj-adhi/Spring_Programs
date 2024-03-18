@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+        
+    <bean class="com.adhiraj.beans.Address" id="addrObj1">
+    	<property name="houseNo" value="123" />
+    	<property name="city" value="Delhi" />
+    	<property name="pinCode" value="54321" />
+    </bean>
+
+    <bean class="com.adhiraj.beans.Student" id="stdObj1">
+    	<property name="name" value="Adhiraj" />
+    	<property name="city" value="#{addrObj1.city}" />
+    	<!-- Instead of using dot operator i.e.
+    		<property name="city" value="#{addrObj1.city}" />
+    	We can even use getter method of Address class as:
+    		<property name="city" value="#{addrObj1.getCity()}" />
+    	-->
+    </bean>
+
+</beans>

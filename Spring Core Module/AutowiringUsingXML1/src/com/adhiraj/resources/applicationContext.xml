@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+        
+    <bean class="com.adhiraj.beans.Address" id="address">
+    	<property name="houseNo" value="123" />
+    	<property name="city" value="Delhi" />
+    	<property name="pincode" value="12345" />
+    </bean>    
+
+    <bean class="com.adhiraj.beans.Student" id="stdObj1" autowire="byName" >
+    	<property name="name" value="Adhiraj Adhi" />
+    	<property name="roll" value="19" />
+    </bean>
+
+</beans>
+
+<!-- We can get the boiler plate of this file from official Spring page as "schema for configuration file" -->

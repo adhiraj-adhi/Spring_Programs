@@ -1,0 +1,21 @@
+log4j.rootLogger = INFO, CA
+
+log4j.appender.CA = org.apache.log4j.ConsoleAppender
+log4j.appender.CA.layout = org.apache.log4j.HTMLLayout
+
+
+# If we want to use FileAppender here then we can do:
+#log4j.rootLogger = INFO, FA
+#log4j.appender.FA = org.apache.log4j.FileAppender
+#log4j.appender.FA.File = D://myLogs.html
+#log4j.appender.FA.layout = org.apache.log4j.HTMLLayout
+
+
+# POINT 1:-
+#If we provide .html extension of our log file then we can open logs in browser 
+#with table being created and displayed properly.
+
+
+# POINT 2:
+# We can even set the title of our HTML page as:
+#log4j.appender.FA.layout.title = My Log Messages

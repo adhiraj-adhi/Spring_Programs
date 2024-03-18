@@ -1,0 +1,56 @@
+package com.adhiraj.resources;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import com.adhiraj.beans.Address;
+import com.adhiraj.beans.Student;
+
+@Configuration
+public class SpringConfigFile {
+	/*
+	 Alternative of:
+	 <bean class="com.adhiraj.beans.Address" id="addrObj1">
+    	<property name="houseNo" value="123" />
+    	<property name="city" value="Delhi" />
+    	<property name="pinCode" value="54321" />
+    </bean>
+	 */
+	
+	@Bean
+	public Address addrObj1() {
+		Address addr = new Address();
+		addr.setHouseNo(133);
+		addr.setCity("Pune");
+		addr.setPinCode(83342);
+		
+		return addr;
+	}
+	
+	/*
+	 Alternative of:
+	 <bean class="com.adhiraj.beans.Student" id="stdObj1">
+    	<property name="name" value="Adhiraj" />
+    	<property name="city" value="#{addrObj1.city}" />
+    	<!-- Instead of using dot operator i.e.
+    		<property name="city" value="#{addrObj1.city}" />
+    	We can even use getter method of Address class as:
+    		<property name="city" value="#{addrObj1.getCity()}" />
+    	-->
+    </bean>
+	*/
+	
+	@Bean
+	public Student stdObj1() {
+		Student std = new Student();
+		std.setName("Abhinav");
+		// Way 1 to set city:
+		std.setCity(addrObj1().getCity());
+		
+
+		// Way 2 to set city:
+		std.setCity(addrObj1().getCity());
+		
+		return std;
+	}
+}

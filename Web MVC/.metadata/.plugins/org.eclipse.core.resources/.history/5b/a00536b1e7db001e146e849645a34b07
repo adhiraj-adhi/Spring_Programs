@@ -1,0 +1,27 @@
+package com.adhi.controllers;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import jakarta.servlet.http.HttpServletRequest;
+
+@Controller
+public class MyController {
+	
+	@GetMapping("/register")
+	public String openRegisterPage() {
+		return "register";
+	}
+	
+	@PostMapping("/register")
+	public String registerFormHandler(HttpServletRequest request) {
+		String name = request.getParameter("name");
+		String email = request.getParameter("email");
+		String password = request.getParameter("password");
+		String gender = request.getParameter("gender");
+		String city = request.getParameter("city");
+		System.out.println("HIT");
+		return "";
+	}
+}

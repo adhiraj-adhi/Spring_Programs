@@ -1,0 +1,1 @@
+=> Case of One Aspect and One Service class

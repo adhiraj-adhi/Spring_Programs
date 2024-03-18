@@ -1,0 +1,24 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+	<!-- Configuring DispatcherServlet:- -->
+	<servlet>
+		<servlet-name>myDispatcherServlet</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>myDispatcherServlet</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+
+	<!-- Handling error (using web.xml file) if resource corresponding to an 
+		URL is not present(We know that in this case we get error with status code 404):-
+	-->
+	<error-page>
+		<error-code>404</error-code>
+		<location>/pageNotFound</location> 
+		<!-- We have to handle this URL (i.e. displayErrorPage) using Controller -->
+	</error-page>
+</web-app>

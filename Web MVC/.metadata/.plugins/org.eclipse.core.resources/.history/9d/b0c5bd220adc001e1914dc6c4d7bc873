@@ -1,0 +1,71 @@
+package com.adhi.controllers;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import com.adhi.beans.Student;
+
+@Controller
+public class MyController {
+	
+	@GetMapping("/register")
+	public String openRegisterPage(Model model) {
+		model.addAttribute("studentModel", new Student());
+		return "register";
+	}
+	
+//	@PostMapping("/register")
+//	public String registerFormHandler(Student std, Model model) {
+//		
+//		/* Now, we have to not get data one by one and set data one by one 
+//		 * using HttpServletRequest and setters method respectively. We will
+//		 * get the bound data in the Student object "std" which we declared 
+//		 * in parameter of this method
+//		 */
+//		
+//		// After getting the "std" object we will insert it into database
+//		boolean isInsertionSuccessful = true;
+//		if(isInsertionSuccessful) {
+//			model.addAttribute("studentDetails", std);
+//		}
+//		
+//		
+//		System.out.println(std.getName()+"..."+std.getEmail()+"..."
+//		+std.getGender()+"..."+std.getCity());
+//		return "profile";
+//	}
+	
+	
+	// Using @ModelAttribute:-
+	@PostMapping("/register")
+	public String registerFormHandler(@ModelAttribute("studentDetails") Student std) {	
+		// Student data will be automatically set into Model by @ModelAttribute
+		System.out.println(std.getName()+"..."+std.getEmail()+"..."
+		+std.getGender()+"..."+std.getCity());
+		return "profile";
+	}
+	
+	
+//	// Using @ModelAttribute at Method Level :-
+//	
+//	@ModelAttribute
+//	public void addStdObject(Model model, Student std) {
+//		model.addAttribute("studentDetails", std);
+//		System.out.println(std.getName()+"..."+std.getEmail()+"..."
+//				+std.getGender()+"..."+std.getCity());
+//	}
+//	
+//	/* As we get "POST" request for "/register" all the methods with @ModelAttribute
+//	 * will be executed first followed by the handler for this request. Here, 
+//	 * addStdObject() will be executed first then registerFormHandler will be executed. 
+//	 * Note that here addStdObject() will also get Student object as it is passed as 
+//	 * the part of "POST" request for "/register".
+//	 */
+//	@PostMapping("/register")
+//	public String registerFormHandler() {	
+//		return "profile";
+//	}
+}

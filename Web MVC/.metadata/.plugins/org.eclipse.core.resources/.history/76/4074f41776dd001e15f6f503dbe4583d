@@ -1,0 +1,15 @@
+package com.adhi.controllers;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class MyController {
+	
+	
+	// Handling URL corresponding to error code 404
+	@GetMapping("/displayErrorPage")
+	public String openErrorPage() {
+		return "error";
+	}
+}

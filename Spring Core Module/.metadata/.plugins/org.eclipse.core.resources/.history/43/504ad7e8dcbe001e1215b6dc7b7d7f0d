@@ -1,0 +1,30 @@
+package com.adhiraj.logging;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+public class Test2 {
+	public void m1() {
+		System.out.println("m1() method starts");
+		
+		logger.log(Level.SEVERE, "m1() method severe method");
+		logger.log(Level.WARNING, "m1() method warning message");
+		logger.log(Level.INFO, "m1() method info message");
+		
+		System.out.println("m1() method ends");
+	}
+	public static void main(String[] args) {
+		System.out.println("main() method starts");
+		Logger logger = Logger.getLogger("Test2");
+		
+		Test2 t2 = new Test2();
+		t2.m1();
+		
+		logger.log(Level.SEVERE, "main() method severe method");
+		logger.log(Level.WARNING, "main() method warning message");
+		logger.log(Level.INFO, "main() method info message");
+		
+		
+		System.out.println("main() method ends");
+	}
+}

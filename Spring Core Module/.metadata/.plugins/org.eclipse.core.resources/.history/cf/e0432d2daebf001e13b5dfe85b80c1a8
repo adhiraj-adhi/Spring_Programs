@@ -1,0 +1,52 @@
+package com.adhiraj.main;
+
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
+
+public class Main {
+	public static void main(String[] args) {
+		System.out.println("---------- Application Starts ----------");
+		
+		
+		// to configure using the properties file we can do:
+		PropertyConfigurator.configure(System.getProperty("user.dir")+"/src/com/adhiraj/resources/log4j.properties");
+		/*
+			In configure(path) we have to provide complete path instead of just 
+			"/com/adhiraj/resources/log4j.properties".
+			
+			-> If we want to know get the complete path of current working directory then we
+			can do:
+			System.out.println(System.getProperty("user.dir"));
+		*/
+		
+		Logger logger = Logger.getLogger("Main");
+		
+		logger.fatal("This is fatal message\n");
+		logger.error("This is error message\n");
+		logger.warn("This is warn message\n");
+		logger.info("This is info message\n");
+
+		System.out.println("---------- Application Stops ----------");
+	}
+}
+
+/*
+	O/P:
+	---------- Application Starts ----------
+	[FATAL] 2024-01-31 01:54:01,613 This is fatal message
+	
+	[ERROR] 2024-01-31 01:54:01,613 This is error message
+	
+	[WARN] 2024-01-31 01:54:01,613 This is warn message
+	
+	[INFO] 2024-01-31 01:54:01,613 This is info message
+	
+	---------- Application Stops ----------
+	
+	-> Since in the pattern we have provided %p in bracket so we are getting
+	priority displayed in bracket in O/P. 
+	
+	-> If we look the brackets then we can see that they are not properly aligned.
+	To make them properly aligned we can use [%-5p] which means b/w brackets five
+	characters will be provided.
+*/

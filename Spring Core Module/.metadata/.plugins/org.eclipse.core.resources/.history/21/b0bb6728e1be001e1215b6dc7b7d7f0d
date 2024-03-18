@@ -1,0 +1,17 @@
+package com.adhiraj.calculator;
+
+import java.util.Scanner;
+
+public class Calculator {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.println("Enter Number 1:");
+		int numb1 = scanner.nextInt();
+		
+		System.out.println("Enter Number 2:");
+		int numb2 = scanner.nextInt();
+		
+		System.out.println("Select Operation (+, -, *, /)");
+	}
+}

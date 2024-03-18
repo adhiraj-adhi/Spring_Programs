@@ -1,0 +1,58 @@
+package com.adhiraj.main;
+
+import java.util.List;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.validation.DataBinder;
+import org.springframework.validation.ObjectError;
+
+import com.adhiraj.beans.Student;
+import com.adhiraj.validators.StudentValidators;
+
+public class Main {
+	public static void main(String[] args) {
+		String configLocation = "/com/adhiraj/resources/applicationContext.xml";
+		
+		ApplicationContext context = new ClassPathXmlApplicationContext(configLocation);
+		Student std = (Student) context.getBean("stdObj");
+		
+		// To validate this Student object we use DataBinder class as:
+		DataBinder binder = new DataBinder(std);
+		binder.addValidators(new StudentValidators());  
+		// The addValidators(), internally calls the overriden method supports() of StudentValidator class will be called
+		
+		// Now, to validate this object:
+		binder.validate();
+		
+		// After validation all our errors gets stored in DataBinder and can be retrieved as:
+		List<ObjectError> errors = binder.getBindingResult().getAllErrors(); 
+		// BindingResult is also an interface
+		//=============================================
+		
+		/* If we do "System.out.println(errors);" and suppose we have errors in roll
+		 * and phoneno then
+		 * O/P:
+		 * [
+		 * 		Field error in object 'target' on field 'roll': rejected value [0];
+		 * 		codes [key_roll.target.roll,key_roll.roll,key_roll.int,key_roll];
+		 * 		arguments [];
+		 * 		default message [Roll Number can not be 0],
+		 * 
+		 * 		Field error in object 'target' on field 'phoneno': rejected value [687652341];
+		 * 		codes [key_phoneno.target.phoneno,key_phoneno.phoneno,key_phoneno.java.lang.String,key_phoneno];
+		 * 		arguments [];
+		 * 		default message [Provide 10 digit valid phone number]
+		 * ]
+		 */
+		
+		if(errors.isEmpty()) {
+			// logic part
+			std.display();
+		} else {
+			for(ObjectError oe : errors) {
+				System.out.println(oe.getDefaultMessage());
+			}
+		}
+	}
+}

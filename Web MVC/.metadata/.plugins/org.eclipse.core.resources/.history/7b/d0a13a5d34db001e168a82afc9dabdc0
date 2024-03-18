@@ -1,0 +1,22 @@
+package com.adhi.controllers;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class MyController {
+	
+	@GetMapping("/aaa")
+	public String openFirstPage() {
+		/*
+		 * Now, suppose here we want to store some data (say username) in session that can be used by openSecondPage() handler then:
+		 */
+		
+		return "first";
+	}
+	
+	@GetMapping("/bbb")
+	public String openSecondPage() {
+		return "second";
+	}
+}

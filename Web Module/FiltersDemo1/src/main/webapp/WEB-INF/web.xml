@@ -1,0 +1,19 @@
+<web-app>
+	<filter>
+		<filter-name> validationFilter </filter-name>
+		<filter-class> com.adhiraj.filters.ValidationFilter </filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name> validationFilter </filter-name>
+		<url-pattern> /register </url-pattern>
+	</filter-mapping>
+	
+	<servlet>
+		<servlet-name> register </servlet-name>
+		<servlet-class> com.adhiraj.backend.Register </servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name> register </servlet-name>
+		<url-pattern> /register </url-pattern>
+	</servlet-mapping>
+</web-app>

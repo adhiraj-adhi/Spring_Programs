@@ -1,0 +1,34 @@
+package com.adhiraj.validators;
+
+import org.springframework.validation.Errors;
+import org.springframework.validation.Validator;
+
+import com.adhiraj.beans.Student;
+
+public class StudentValidators implements Validator {
+
+	@Override
+	public boolean supports(Class<?> clazz) {
+		boolean supportsValidation = Student.class.equals(clazz);
+		return supportsValidation;
+	}
+
+	@Override
+	public void validate(Object target, Errors errors) {
+		Student std = (Student) target;
+		
+		if(std.getName().equals("") || std.getName().equals(null)) {
+			errors.rejectValue("name", "key_name", "Name is not valid");
+			/*
+			  rejectValue(String nameOfProperty, String keyName, String errorMessage)
+			*/
+		}
+		if(std.getRoll() <= 0) {
+			errors.rejectValue("roll", "key_roll", "Roll Number is not valid");
+		}
+		if(std.getPhoneno().length() != 10) {
+			errors.rejectValue("phoneno", "key_phoneno", "Provide 10 digit valid phone number");
+		}
+	}
+
+}

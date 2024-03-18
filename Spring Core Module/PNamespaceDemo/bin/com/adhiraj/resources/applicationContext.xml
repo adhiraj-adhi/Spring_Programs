@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 
+	<bean class="com.adhiraj.beans.Address" id="addrObj1">
+		<property name="houseNo" value="123">
+		<property name="city" value="Delhi">
+		<property name="pinCode" value="12345">
+	</bean>
+	
+	<bean class="com.adhiraj.beans.Student" id="stdObj1">
+		<property name="name" value="Adhiraj">
+		<property name="roll" value="101">
+		<property name="marks" value="94.4">
+		<property name="address" ref="addrObj1">
+	</bean>
+    
+    The alternative of above line is:
+    -->
+    
+    <bean class="com.adhiraj.beans.Address" id="addrObj1"
+    	p:houseNo="123"
+    	p:city="Delhi"
+    	p:pinCode="12345"
+    />
+    
+    <bean class="com.adhiraj.beans.Student" id="stdObj1"
+    	p:name="Adhiraj"
+    	p:roll="101"
+    	p:marks="94.4"
+    	p:address-ref="addrObj1"
+    />
+
+</beans>
+
+<!-- The following line:[xmlns:p="http://www.springframework.org/schema/p"] in above beans
+tag is nothing but p-namespace declaration in the spring configuration file -->

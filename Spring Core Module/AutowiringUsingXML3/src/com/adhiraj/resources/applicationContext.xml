@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="com.adhiraj.beans.Address" id="anyValue">
+    <!-- Here, the data type of "address" property is "Address" which is
+    matched with value of class Attribute in this bean so this bean can be
+    autowired "byType". Also here we can provide any value for id.  -->
+    	<property name="houseNo" value="123" />
+    	<property name="city" value="Delhi" />
+    	<property name="pincode" value="54321" />
+    </bean>
+    
+    
+    <bean class="com.adhiraj.beans.Subjects" id="anyValue2">
+    <!-- Here also, the data type of "subjects" property is "Subject" which is
+    matched with value of class Attribute in this bean so this bean can be
+    autowired "byType". Also here we can provide any value for id.  -->
+    	<property name="subjects">
+    		<list>
+    			<value>C</value>
+    			<value>C++</value>
+    			<value>Java</value>
+    			<value>Python</value>
+    		</list>
+    	</property>
+    </bean>
+    
+    <bean class="com.adhiraj.beans.Student" id="stdObj1" autowire="byType">
+    	<property name="name" value="Abhinav" />
+    	<property name="roll" value="1" />
+    </bean>
+
+</beans>

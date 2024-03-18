@@ -1,0 +1,18 @@
+package com.adhiraj.main;
+
+import org.apache.log4j.Logger;
+
+public class Main {
+	public static void main(String[] args) {
+		System.out.println("---------- Application Starts ----------");
+		
+		Logger logger = Logger.getLogger("Main");
+		
+		logger.fatal("This is fatal message");
+		logger.error("This is error message");
+		logger.warn("This is warn message");
+		logger.info("This is info message");
+
+		System.out.println("---------- Application Stops ----------");
+	}
+}

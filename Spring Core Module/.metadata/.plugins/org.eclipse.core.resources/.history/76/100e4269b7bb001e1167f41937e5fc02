@@ -1,0 +1,18 @@
+package com.adhiraj.main;
+
+import javax.swing.JFrame;
+
+public class LoginFrame {
+	public LoginFrame() {
+		JFrame jf = new JFrame();
+		jf.setSize(600, 600);
+		
+		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		jf.setVisible(true);
+	}
+	
+	public static void main(String[] args) {
+		new LoginFrame();
+	}
+}

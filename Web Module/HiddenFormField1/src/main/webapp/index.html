@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="myservlet" method="post">
+		<input type="text" name="name" placeholder="Enter Name"/><br/><br/>
+		<!-- If suppose we have a data and its value (say PageId with value=111
+			 and we want to send it to MyServlet servlet then:
+		-->
+		<input type="hidden" name="pageID" value="111" /> <!-- It will be invisible -->
+		<input type="submit" value="Click Me" />
+	</form>
+</body>
+</html>

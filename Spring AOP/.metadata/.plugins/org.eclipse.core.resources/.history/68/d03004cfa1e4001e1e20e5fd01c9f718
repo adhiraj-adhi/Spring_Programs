@@ -1,0 +1,13 @@
+package com.adhi.services;
+
+//import org.springframework.aop.framework.ProxyFactory;
+
+public class BankingApp {
+	public void doTransactionUsingUPI() {
+		System.out.println("=== Business Logic For UPI ===");
+	}
+	
+	public void doTransactionUsingWallet() {
+		System.out.println("=== Business Logic For Wallet ===");
+	}
+}

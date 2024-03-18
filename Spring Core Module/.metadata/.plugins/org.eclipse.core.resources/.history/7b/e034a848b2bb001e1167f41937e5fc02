@@ -1,0 +1,11 @@
+package com.adhiraj.main;
+
+import java.util.Locale;
+import java.util.ResourceBundle;
+
+public class Main1 {
+	public static void main(String[] args) {
+		Locale locale = new Locale("en","US");
+		ResourceBundle resourcebundle = 
+	}
+}

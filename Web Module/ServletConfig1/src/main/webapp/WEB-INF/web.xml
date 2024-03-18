@@ -1,0 +1,20 @@
+<web-app>
+	<servlet>
+		<servlet-name> ConfigDemo </servlet-name>
+		<servlet-class> com.adhiraj.backend.ServletClass </servlet-class>
+		
+		<!-- Setting Config data -->
+		<init-param>
+			<param-name> myName </param-name>
+			<param-value> Adhiraj </param-value>
+		</init-param>
+		<init-param>
+			<param-name> age </param-name>
+			<param-value> 23 </param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name> ConfigDemo </servlet-name>
+		<url-pattern> /servlet </url-pattern>
+	</servlet-mapping>
+</web-app>

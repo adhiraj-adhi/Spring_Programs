@@ -1,0 +1,18 @@
+package com.adhiraj.resources;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import com.adhiraj.beans.Student;
+
+@Configuration
+public class SpringConfigFile {
+	@Bean("stdObj")
+	public Student createStd() {
+		Student std = new Student();
+		std.setName("Adhiraj");
+		std.setRoll(101);
+		std.setPhoneno("1234");		
+		return std;
+	}
+}

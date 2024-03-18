@@ -1,0 +1,4 @@
+=> 	Case of One Aspect and One Service class in which we want to run a method
+	of Aspect class both before and after some methods without creating separate methods
+	in Aspect class marked with @Before and @After annotations as we did in the project
+	"AOPUsingJavaAnnotation2" without using ProceedingJoinPoint.

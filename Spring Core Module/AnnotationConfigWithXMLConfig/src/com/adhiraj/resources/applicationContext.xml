@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context" 
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context.xsd">
+        
+    
+
+	<context:component-scan base-package="com.adhiraj.beans" />
+	<!-- After the above line execution all the class with @Component annotation in
+		com.adhiraj.beans package will be scanned and object of them will be created by
+		spring container.
+	-->
+</beans>
+
+
+<!-- For this we are required to use the context schema but not the noraml schema that
+	we used earlier.
+-->

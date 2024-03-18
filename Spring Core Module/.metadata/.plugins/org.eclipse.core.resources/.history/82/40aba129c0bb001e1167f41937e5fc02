@@ -1,0 +1,5 @@
+package com.adhiraj.beans;
+
+public class Student {
+
+}

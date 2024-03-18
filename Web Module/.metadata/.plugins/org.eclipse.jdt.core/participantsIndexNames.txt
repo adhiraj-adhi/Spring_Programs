@@ -1,0 +1,15 @@
+INDEX VERSION 1.134
+D:\JavaUsingEclipse\Spring_Learner\Web Module\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2261632687.index
+\BeanRelatedActionTagsDemo\src\main\java
+D:\JavaUsingEclipse\Spring_Learner\Web Module\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2370477012.index
+\ForwardActionTagDemo\src\main\java
+D:\JavaUsingEclipse\Spring_Learner\Web Module\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3544243903.index
+\ExpressionLanguageDemo1\src\main\java
+D:\JavaUsingEclipse\Spring_Learner\Web Module\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1248701787.index
+\SpringWebMVC1\src\main\resources
+D:\JavaUsingEclipse\Spring_Learner\Web Module\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4026425470.index
+\JSTLDemo1\src\main\java
+D:\JavaUsingEclipse\Spring_Learner\Web Module\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\610721144.index
+\MVCDesignPatternDemo\src\main\java
+D:\JavaUsingEclipse\Spring_Learner\Web Module\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1334423111.index
+\SpringWebMVC1\src\main\java

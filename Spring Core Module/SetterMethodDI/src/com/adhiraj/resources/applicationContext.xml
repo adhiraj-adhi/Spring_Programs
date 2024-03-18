@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="com.adhiraj.beans.Address" id="addrId">
+		<property name="houseNo" value="12" />
+		<property name="city" value="Delhi" />
+		<property name="pinCode" value="12344" />
+    </bean>
+    
+    <bean class="com.adhiraj.beans.Student" id="stdObj">
+		<property name="name" value="Adhiraj" />
+		<property name="roll" value="12" />
+		<property name="address" ref="addrId" />
+		<!-- If in above line we use value="addrId" instead of ref="addrId" than we will get
+		error saying: Failed to convert property value of type 'java.lang.String' to required type 
+		'com.adhiraj.beans.Address' for property 'address'
+		-->
+	</bean>
+</beans>

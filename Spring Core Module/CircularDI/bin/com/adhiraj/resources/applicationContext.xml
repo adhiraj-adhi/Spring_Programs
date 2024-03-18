@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="com.adhiraj.beans.Teacher" id="teacObj">
+		<property name="student" ref="stdObj" />   
+    </bean>
+    
+    
+    <bean class="com.adhiraj.beans.Student" id="stdObj">
+		<property name="teacher" ref="teacObj" />   
+    </bean>
+
+</beans>

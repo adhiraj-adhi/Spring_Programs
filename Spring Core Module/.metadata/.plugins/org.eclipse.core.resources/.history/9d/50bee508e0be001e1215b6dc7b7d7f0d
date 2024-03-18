@@ -1,0 +1,56 @@
+package com.adhiraj.logging;
+
+import java.io.IOException;
+import java.util.logging.FileHandler;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
+
+public class Test4 {
+	public static void main(String[] args) {
+		System.out.println("main() method starts");
+		Logger logger = Logger.getLogger("Test2");
+		
+		FileHandler fileHandler = null;
+		
+		try {
+			fileHandler = new FileHandler("D://myLogs.log");
+		} catch (SecurityException | IOException e) {
+			e.printStackTrace();
+		}
+		
+		SimpleFormatter simpleFormatter = new SimpleFormatter();
+		fileHandler.setFormatter(simpleFormatter);
+		
+		logger.addHandler(fileHandler);
+		
+		/*
+		 Now, our generated log file will contain message as:
+		 Jan 30, 2024 1:21:50 AM com.adhiraj.logging.Test4 main
+		 SEVERE: main() method severe method
+		 Jan 30, 2024 1:21:50 AM com.adhiraj.logging.Test4 main
+		 WARNING: main() method warning message
+		 Jan 30, 2024 1:21:50 AM com.adhiraj.logging.Test4 main
+		 INFO: main() method info message
+     	*/
+		
+		logger.log(Level.SEVERE, "main() method severe method");
+		logger.log(Level.WARNING, "main() method warning message");
+		logger.log(Level.INFO, "main() method info message");
+		
+		
+		System.out.println("main() method ends");
+	}
+}
+
+/*
+O/P:
+	main() method starts
+	Jan 30, 2024 1:15:32 AM com.adhiraj.logging.Test3 main
+	SEVERE: main() method severe method
+	Jan 30, 2024 1:15:32 AM com.adhiraj.logging.Test3 main
+	WARNING: main() method warning message
+	Jan 30, 2024 1:15:32 AM com.adhiraj.logging.Test3 main
+	INFO: main() method info message
+	main() method ends
+*/

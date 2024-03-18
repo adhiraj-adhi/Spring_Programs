@@ -1,0 +1,10 @@
+package com.adhiraj.beans;
+
+import org.springframework.context.support.ResourceBundleMessageSource;
+
+public class Student {
+	public void display() {
+		ResourceBundleMessageSource
+		System.out.println("Hello, how are you?");
+	}
+}

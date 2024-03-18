@@ -1,0 +1,15 @@
+<web-app>
+	<filter-mapping>
+		<filter-name> validationFilter </filter-name>
+		<url-pattern> /register </url-pattern>
+	</filter-mapping>
+	<!--
+		After clicking Register button on form first filter with URL pattern provided
+		in action (here, "/register") will be searched in web.xml. Here, we have a 
+		filter with name="validationFilter". Then corresponding filter will be searched
+		and executed (Here, ValidationFilter). If there would have been multiple filter
+		than it would have been executed from top to bottom.
+		After all filters are executed then Servlet associated with the URL pattern
+		will be executed.
+	-->
+</web-app>

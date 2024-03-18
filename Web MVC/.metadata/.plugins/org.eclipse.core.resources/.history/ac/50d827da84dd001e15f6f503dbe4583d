@@ -1,0 +1,26 @@
+package com.adhi.controllers;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import jakarta.servlet.http.HttpServletRequest;
+
+@Controller
+public class MyController {
+	@GetMapping("/openVotingPage")
+	public String openVotingPage() {
+		return "voting-page";
+	}
+	
+	@PostMapping("/votingForm")
+	public String votingForm(HttpServletRequest req) {
+		int age = Integer.parseInt(req.getParameter("age"));
+		
+		if(age<18) {
+			return "fail";
+		} else {
+			return "success";
+		}
+	}
+}

@@ -1,0 +1,5 @@
+package com.adhi.aspects;
+
+public class SecurityAspect {
+
+}

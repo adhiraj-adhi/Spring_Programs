@@ -1,0 +1,106 @@
+package com.adhiraj.calculator;
+
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+public class Calculator1 {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		
+		Logger logger = Logger.getLogger("Calculator");
+		
+		boolean continueCalc = false;
+		do {
+			logger.log(Level.INFO, "====================================");
+			System.out.println("Enter Number 1:");
+			int numb1 = scanner.nextInt();
+			logger.log(Level.INFO, "Number 1 provided by user is: "+numb1);
+			
+			System.out.println("Enter Number 2:");
+			int numb2 = scanner.nextInt();
+			logger.log(Level.INFO, "Number 2 provided by user is: "+numb2);
+			
+			System.out.println("Select Operation (+, -, *, /)");		
+			String operation = scanner.next();
+			logger.log(Level.INFO, "Operation selected by user is: "+operation);
+			
+			int result;
+			switch (operation) {
+			case "+": 
+				result = numb1 + numb2;
+				System.out.println("Addition is: "+result);
+				logger.log(Level.INFO, "Addition is: "+result);
+				break;
+			case "-": 
+				result = numb1 - numb2;
+				System.out.println("Subtraction is: "+result);
+				logger.log(Level.INFO, "Subtraction is: "+result);
+				break;
+			case "*": 
+				result = numb1 * numb2;
+				System.out.println("Multiplication is: "+result);
+				logger.log(Level.INFO, "Multiplication is: "+result);
+				break;
+			case "/": 
+				result = numb1 / numb2;
+				System.out.println("Division is: "+result);
+				logger.log(Level.INFO, "Division is: "+result);
+				break;
+			default:
+				System.out.println("Invalid Operation");
+				logger.log(Level.INFO, "Invalid Operation");
+			}
+			System.out.println("If you want to continue operation "
+					+ "press y or Y else press any key to exit");
+			String key = scanner.next();
+			continueCalc = key.equalsIgnoreCase("y") ? true : false;
+		} 
+		while(continueCalc);
+		System.out.println("Exit success");
+	}
+}
+
+/*
+O/P:
+	Jan 30, 2024 1:51:46 AM com.adhiraj.calculator.Calculator1 main
+	INFO: ====================================
+	Enter Number 1:
+	12
+	Jan 30, 2024 1:51:50 AM com.adhiraj.calculator.Calculator1 main
+	INFO: Number 1 provided by user is: 12
+	Enter Number 2:
+	13
+	Select Operation (+, -, *, /)
+	Jan 30, 2024 1:51:53 AM com.adhiraj.calculator.Calculator1 main
+	INFO: Number 2 provided by user is: 13
+	-
+	Jan 30, 2024 1:51:56 AM com.adhiraj.calculator.Calculator1 main
+	INFO: Operation selected by user is: -
+	Subtraction is: -1
+	Jan 30, 2024 1:51:56 AM com.adhiraj.calculator.Calculator1 main
+	INFO: Subtraction is: -1
+	If you want to continue operation press y or Y else press any key to exit
+	y
+	Jan 30, 2024 1:52:00 AM com.adhiraj.calculator.Calculator1 main
+	INFO: ====================================
+	Enter Number 1:
+	12
+	Enter Number 2:
+	Jan 30, 2024 1:52:07 AM com.adhiraj.calculator.Calculator1 main
+	INFO: Number 1 provided by user is: 12
+	12
+	Jan 30, 2024 1:52:11 AM com.adhiraj.calculator.Calculator1 main
+	INFO: Number 2 provided by user is: 12
+	Select Operation (+, -, *, /)
+	/
+	Jan 30, 2024 1:52:13 AM com.adhiraj.calculator.Calculator1 main
+	INFO: Operation selected by user is: /
+	Division is: 1
+	Jan 30, 2024 1:52:13 AM com.adhiraj.calculator.Calculator1 main
+	INFO: Division is: 1
+	If you want to continue operation press y or Y else press any key to exit
+	v
+	Exit success
+*/
+

@@ -1,0 +1,23 @@
+package com.adhiraj.main;
+
+import org.springframework.expression.Expression;
+import org.springframework.expression.ExpressionParser;
+import org.springframework.expression.spel.standard.SpelExpressionParser;
+
+public class Main9 {
+	public static void main(String[] args) {
+		ExpressionParser parser = new SpelExpressionParser();
+		String str_exp1 = " 'Adhiraj Adhi' matches 'Adhiraj adhi' ";
+		
+	}
+	
+	public static void method1() {
+		System.out.println();
+	}
+}
+
+
+/*
+	O/P:
+	
+*/

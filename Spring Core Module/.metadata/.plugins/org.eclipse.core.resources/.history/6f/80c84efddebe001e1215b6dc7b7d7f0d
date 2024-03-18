@@ -1,0 +1,35 @@
+package com.adhiraj.logging;
+
+import java.io.IOException;
+import java.util.logging.FileHandler;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+public class Test3 {
+	public static void main(String[] args) {
+		System.out.println("main() method starts");
+		Logger logger = Logger.getLogger("Test2");
+		
+		// since we want to store logging into a file so we can use FileHandler as:
+		FileHandler fileHandler = null;
+		
+		try {
+			fileHandler = new FileHandler("D://myLogs.log");
+			// In FileHandler() constructor we provide the location of Log file.
+		} catch (SecurityException | IOException e) {
+			e.printStackTrace();
+		}
+		
+		logger.log(Level.SEVERE, "main() method severe method");
+		logger.log(Level.WARNING, "main() method warning message");
+		logger.log(Level.INFO, "main() method info message");
+		
+		
+		System.out.println("main() method ends");
+	}
+}
+
+/*
+O/P:
+	
+*/

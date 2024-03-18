@@ -1,0 +1,31 @@
+package com.adhiraj.main;
+
+import org.springframework.expression.Expression;
+import org.springframework.expression.ExpressionParser;
+import org.springframework.expression.spel.standard.SpelExpressionParser;
+
+public class Main9 {
+	public static void main(String[] args) {
+		ExpressionParser parser = new SpelExpressionParser();
+		// static method invocation:
+		String str_exp1 = "T(com.adhiraj.main.Main9).addition(10,20)";
+		Expression expression = parser.parseExpression(str_exp1);
+		System.out.println(expression.getValue());
+		
+	}
+	
+	
+	public static void addition(int a, int b) {
+		System.out.println("Addition is: "+(a+b));
+	}
+	
+	public int subtraction(int a, int b) {
+		return b-a;
+	}
+}
+
+
+/*
+	O/P:
+	
+*/

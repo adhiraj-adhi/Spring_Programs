@@ -1,0 +1,12 @@
+package com.adhi.aspects;
+
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+
+@Aspect
+public class LoggingAspect {
+	@Before("execution(* com.adhi.services.BankingApp.*(..))")
+	public void logger() {
+		System.out.println("--- Logging Service ---");
+	}
+}

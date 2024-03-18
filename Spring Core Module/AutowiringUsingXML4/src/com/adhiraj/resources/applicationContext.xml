@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="com.adhiraj.beans.Address" id="anyValue1">
+    	<constructor-arg value="123" />
+    	<constructor-arg value="Delhi" />
+    	<constructor-arg value="54321" />
+    </bean>
+    
+    
+    <bean class="com.adhiraj.beans.Subjects" id="anyValue2">
+    	<constructor-arg>
+    		<list>
+    			<value>C</value>
+    			<value>C++</value>
+    			<value>Java</value>
+    			<value>Python</value>
+    			<value>JavaScript</value>
+    		</list>
+    	</constructor-arg>
+    </bean>
+    
+    <bean class="com.adhiraj.beans.Student" id="stdObj1" autowire="constructor">
+    	<constructor-arg value="Abhinav" index="0" />
+    	<constructor-arg value="12" index="1" />
+    	<!-- If we do not provide index attribute in above then we will get error saying:
+    	 	 No qualifying bean of type 'java.lang.String' available: expected at least 1 bean 
+    	 	 which qualifies as autowire candidate. Dependency annotations: {} -->
+    </bean>
+
+</beans>

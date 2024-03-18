@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+        "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+
+	<!-- Creating object of target class: -->
+	<bean class="com.adhi.services.BankingApp" id="targetClass" />
+	
+	<!-- Creating object of Aspects class: -->
+	<bean class="com.adhi.aspects.LoggingAspect" id="logAspectId" />
+	
+	<!-- FOLOLOWING ARE THE CHANGES: -->
+	
+	<!-- Change 1: Here, we will be creating bean of class NameMatchMethodPointcut which
+	is present in "org.springframework.aop.support" package and are
+	used to execute an advice at a partcular Pointcut based on Name Match. We will using 
+	setter methods setMappedNames(String) [it is used to configuring a single method 
+	name pattern] and setMappedNames(String... arg) [it is used to set the method name 
+	patterns defining methods to match. ] -->
+	
+	<bean class="org.springframework.aop.support.NameMatchMethodPointcut" id="pointCutId">
+		<property name="mappedNames">
+			<!-- We have used mappedNames instead of mappedName as we are configuring
+			multiple methods -->
+			<list>
+				<value>doTransactionUsingUPI</value>
+				<value>doTransactionUsingWallet</value>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- We will be using DefaultPointcutAdvisor class present in the package 
+	org.springframework.aop.support. This class is an advisor (we know that Advisor is the 
+	group of "advice" or "pointcuts" that is passed to the proxy factory object) which we will
+	be using to set advice and set point cuts using it's setAdvice() and setPointcut()
+	setter methods as: -->
+	
+	<bean class="org.springframework.aop.support.DefaultPointcutAdvisor" id="advisorID">
+		<property name="pointcut" ref="pointCutId" />
+		<property name="advice" ref="logAspectId" />
+	</bean>
+	
+	<!-- Configuring target to run the particular advice: -->
+	<bean class="org.springframework.aop.framework.ProxyFactoryBean" id="proxyId">
+		<property name="target" ref="targetClass" />
+		<property name="interceptorNames">
+			<list>
+				<value>logAspectId</value>
+			</list>
+		</property>		
+	</bean>
+</beans>

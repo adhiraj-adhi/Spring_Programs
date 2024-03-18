@@ -1,0 +1,7 @@
+package com.adhi.services;
+
+public class BankingApp2 {
+	public void transactionsingWallet2() {
+		System.out.println("=== business logic for ");
+	}
+}

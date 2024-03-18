@@ -1,0 +1,22 @@
+package com.adhi.controllers;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class MyController {
+	@GetMapping("/home")
+	public String openHomePage() {
+		/* If suppose there's an exception that occurred here (for time
+		 * being let us assume java.lang.ArithmeticException) as:-
+		 */
+		System.out.println(10/0);
+		return "home";
+	}
+	
+	// Handler for java.lang.A
+	@GetMapping("/arithException")
+	public String open() {
+		return "";
+	}
+}

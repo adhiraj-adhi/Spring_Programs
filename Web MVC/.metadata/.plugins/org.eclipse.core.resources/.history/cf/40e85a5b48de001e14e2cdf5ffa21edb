@@ -1,0 +1,22 @@
+package com.adhi.controllers;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class MyController {
+	@GetMapping("/openHome")
+	public String openHomePage() {
+		return "home";
+	}
+	
+	@GetMapping("/openAbout")
+	public String openHomePage() {
+		return "home";
+	}
+	
+	@GetMapping("/openContact")
+	public String openHomePage() {
+		return "home";
+	}
+}

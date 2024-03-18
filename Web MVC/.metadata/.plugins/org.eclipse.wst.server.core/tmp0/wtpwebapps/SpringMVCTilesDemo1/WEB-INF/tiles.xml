@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+       
+<tiles-definitions>
+	
+	<definition name="template1_def" template="/WEB-INF/views/template-one.jsp">
+		<put-attribute name="header1" value="/WEB-INF/views/header.jsp" />
+		<put-attribute name="menubar1" value="/WEB-INF/views/menubar.jsp" />
+		<put-attribute name="body1" value="" />
+		<put-attribute name="footer1" value="/WEB-INF/views/footer.jsp" />
+	</definition>
+	
+	<!-- For a page, the body can vary in the above definition as the body can 
+	be the content of the home.jsp page, or about-us.jsp page, or contact-us.jsp
+	page. So, we can override the definition based on the name of template1_def
+	that is being returned from Controller as: -->
+	<definition name="home_def" extends="template1_def">
+		<put-attribute name="body1" value="/WEB-INF/views/home.jsp" />
+	</definition>
+	
+	<definition name="aboutus_def" extends="template1_def">
+		<put-attribute name="body1" value="/WEB-INF/views/about-us.jsp" />
+	</definition>
+	
+	<definition name="contactus_def" extends="template1_def">
+		<put-attribute name="body1" value="/WEB-INF/views/contact-us.jsp" />
+	</definition>
+	
+</tiles-definitions>

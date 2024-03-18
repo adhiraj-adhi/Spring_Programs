@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location" value="/com/adhiraj/resources/student.properties" />
+	</bean>
+	
+    <bean class="com.adhiraj.beans.Student" id="stdObj">
+    	<property name="name" value="${student.name}" />
+    	<property name="roll" value="${student.roll}" />
+    	<!-- In case of Map we set values as: -->
+    	<property name="subAndMarks">
+    		<map>
+    			<entry key="C" value="${student.subAndMarks.C}" />
+    			<entry key="C++" value="${student.subAndMarks.C++}" />
+    			<entry key="Java" value="${student.subAndMarks.Java}" />
+    			<entry key="Python" value="${student.subAndMarks.Python}" />
+    		</map>
+    	</property>
+    </bean>
+
+</beans>

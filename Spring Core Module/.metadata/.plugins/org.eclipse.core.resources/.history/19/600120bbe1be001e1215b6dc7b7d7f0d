@@ -1,0 +1,41 @@
+package com.adhiraj.calculator;
+
+import java.util.Scanner;
+
+public class Calculator {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.println("Enter Number 1:");
+		int numb1 = scanner.nextInt();
+		
+		System.out.println("Enter Number 2:");
+		int numb2 = scanner.nextInt();
+		
+		System.out.println("Select Operation (+, -, *, /)");
+		
+		String operation = scanner.next();
+		
+		int result;
+		switch (operation) {
+		case "+": 
+			result = numb1 + numb2;
+			System.out.println("Addition is: "+result);
+			break;
+		case "-": 
+			result = numb1 - numb2;
+			System.out.println("Subtraction is: "+result);
+			break;
+		case "*": 
+			result = numb1 * numb2;
+			System.out.println("Multiplication is: "+result);
+			break;
+		case "/": 
+			result = numb1 / numb2;
+			System.out.println("Division is: "+result);
+			break;
+		default:
+			System.out.println("Invalid Operation");
+		}
+	}
+}

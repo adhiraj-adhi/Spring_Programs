@@ -1,0 +1,3 @@
+key_message = Hi, I am {0} from {1}.
+
+# Values for this indexes (i.e. 0 and 1) will come from getMessage() method in Student class

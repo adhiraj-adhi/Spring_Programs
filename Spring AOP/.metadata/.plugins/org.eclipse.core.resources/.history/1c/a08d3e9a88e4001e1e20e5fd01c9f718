@@ -1,0 +1,7 @@
+package com.adhi.aspects;
+
+import org.springframework.aop.BeforeAdvice;
+
+public class LoggingAspect implements BeforeAdvice {
+
+}

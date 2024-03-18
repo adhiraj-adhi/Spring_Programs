@@ -1,0 +1,13 @@
+package com.adhiraj.main;
+
+import org.springframework.expression.ExpressionParser;
+import org.springframework.expression.spel.standard.SpelExpressionParser;
+
+public class Main {
+	public static void main(String[] args) {
+		ExpressionParser parser = new SpelExpressionParser();
+		
+		parser.parseExpression("'Hello World'");
+//		parseExpression(String expression) -> Return type is String
+	}
+}

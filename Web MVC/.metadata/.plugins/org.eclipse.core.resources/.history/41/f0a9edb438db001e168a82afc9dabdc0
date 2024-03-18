@@ -1,0 +1,36 @@
+package com.adhi.controllers;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.SessionAttributes;
+
+@Controller
+// Storing data in @SessionAttributes:
+@SessionAttributes("nameOfUser")
+public class MyController {
+	
+	@GetMapping("/aaa")
+	public String openFirstPage(Model model) {
+		String username = "Adhiraj";
+		model.addAttribute("nameOfUser", username);
+		return "first";
+	}
+	
+	@GetMapping("/bbb")
+	public String openSecondPage() {
+		return "second";
+	}
+	
+
+	@GetMapping("/ccc")
+	public String openThirdPage() {
+		return "thoird";
+	}
+	
+
+	@GetMapping("/ddd")
+	public String openFourthPage() {
+		return "fourth";
+	}
+}

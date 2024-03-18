@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;coma.adhiraj.beans&apos; to &apos;com.adhiraj.beans&apos;&#x0D;&#x0A;- Original project: &apos;MultipleConfigAndBeans&apos;&#x0D;&#x0A;- Original element: &apos;MultipleConfigAndBeans/src/coma.adhiraj.beans&apos;&#x0D;&#x0A;- Renamed element: &apos;MultipleConfigAndBeans/src/com.adhiraj.beans&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;coma.adhiraj.beans&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;coma.adhiraj.beans" name="com.adhiraj.beans" qualified="false" references="true" stamp="1705262385672" textual="false" version="1.0"/>
+</session>

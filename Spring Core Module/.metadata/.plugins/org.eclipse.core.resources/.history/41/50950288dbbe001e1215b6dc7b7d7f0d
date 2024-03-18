@@ -1,0 +1,19 @@
+package com.adhiraj.logging;
+
+import java.util.logging.Logger;
+
+public class Test1 {
+	public static void main(String[] args) {
+		
+		/* 
+		 We can get Logger object using getLogger(String name) factory method.
+		 In the argument of getLogger() method we provide the name of Logger 
+		 which is generally a dot-separated name and should normally be based on 
+		 the package name or class name of the subsystem, such as java.netor, javax.swing class 
+		*/
+		Logger logger = Logger.getLogger("Test1");
+		
+		// providing the level and message of logger
+		logger.log(Level.SEVER, "This is very-very important message");
+	}
+}
